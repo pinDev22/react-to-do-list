@@ -3,7 +3,22 @@
 import React, { useState } from 'react'
 import ToDoCard from './Card';
 import ToDoForm from './Form';
+import StudentList from './List';
 
+
+function getStudentsList() {
+  fetch(`https://scratched-juniper-salto.glitch.me/kekambas`)
+    .then(response => response.json())
+    .then(data => {
+        //get student list
+        console.log(data)
+    })
+    .catch(error => {
+        // Handle any errors that may occur during the request
+        console.log(error)
+    });
+
+}
 export default function ToDo() {
     const [tasks, setTasks] = useState([]);
 
